@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSort2", "QuickSort2\QuickSort2.csproj", "{D965ECB9-4398-4296-A994-25AC4A437BF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickSortTest", "UnitTestProject1\QuickSortTest.csproj", "{3CB99CD7-B98F-47F5-B764-660F09ED0FF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D965ECB9-4398-4296-A994-25AC4A437BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D965ECB9-4398-4296-A994-25AC4A437BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D965ECB9-4398-4296-A994-25AC4A437BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB99CD7-B98F-47F5-B764-660F09ED0FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB99CD7-B98F-47F5-B764-660F09ED0FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB99CD7-B98F-47F5-B764-660F09ED0FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB99CD7-B98F-47F5-B764-660F09ED0FF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

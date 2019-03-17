@@ -3,25 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using NUnit.Framework;
 namespace QuickSort2
 {
-    class Program
+    public class Program
     {
-        static void Swap(int a, int b)
-        {
-            int c;
-            c = a;
-            a = b;
-            b = c;
-        }
-
-        static public void QuickSort(int[] ar)
+        public static  void QuickSort(int[] ar)
         {
             if (ar.Length > 1) QuickSort(ar, 0, ar.Length - 1);
         }
 
-        static private void QuickSort(int[] ar, int left, int right)
+        public static void QuickSort(int[] ar, int left, int right)
         {
             if (left == right) return;
             int i = left + 1;
@@ -48,20 +40,17 @@ namespace QuickSort2
                 QuickSort(ar, i, right);
             }
         }
+        static Random random = new Random();
+        public static int[] GenerateArray(int length)
+        {
+            var array = new int[length];
+            for (int i = 0; i < array.Length; i++)
+                array[i] = random.Next(0, 1000);
+            return array;
+        }
         static void Main(string[] args)
         {
-            var rnd = new Random();
-            // rnd.Next(); // возвращает случайное число от 0 до int.MaxValue
-            //int[] array = new int[100];
-            int[] array = new int[] {1,2,3 };
-            if (array.Length == 0)
-                return;
-            for (int i = 0; i < array.Length; i++)
-            {
-                // array[i]= rnd.Next(0, 10000);
-                // array[i] =1;
-            }
-
+            var array = GenerateArray(10000);
             QuickSort(array);
             for (int i = 0; i < array.Length; i++)
             {
