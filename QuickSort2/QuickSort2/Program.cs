@@ -13,39 +13,41 @@ namespace QuickSort2
             if (ar.Length > 1) QuickSort(ar, 0, ar.Length - 1);
         }
 
-        public static void QuickSort(int[] ar, int left, int right)
+        public static void QuickSort(int[] array, int left, int right)
         {
             if (left == right) return;
             int i = left + 1;
             int j = right;
-            int pivot = ar[left];
+            int pivot = array[left];
             while (i < j)
             {
-                if (ar[i] <= pivot) i++;
-                else if (ar[j] > pivot) j--;
+                if (array[i] <= pivot) i++;
+                else if (array[j] > pivot) j--;
                 else
                 {
-                    int m = ar[i]; ar[i] = ar[j]; ar[j] = m;
+                    int m = array[i]; array[i] = array[j]; array[j] = m;
                 }
             }
 
-            if (ar[j] <= pivot)
+            if (array[j] <= pivot)
             {
-                int m = ar[left]; ar[left] = ar[right]; ar[right] = m;
-                QuickSort(ar, left, right - 1);
+                int m = array[left]; array[left] = array[right]; array[right] = m;
+                QuickSort(array, left, right - 1);
             }
             else
             {
-                QuickSort(ar, left, i - 1);
-                QuickSort(ar, i, right);
+                QuickSort(array, left, i - 1);
+                QuickSort(array, i, right);
             }
         }
-        static Random random = new Random();
         public static int[] GenerateArray(int length)
         {
-            var array = new int[length];
-            for (int i = 0; i < array.Length; i++)
-                array[i] = random.Next(0, 1000);
+            int[] array = new int[length];
+            Random rand = new Random();
+            for (int y = 0; y < length; y++)
+            {
+                array[y] = rand.Next(0, 50);
+            }
             return array;
         }
         static void Main(string[] args)
