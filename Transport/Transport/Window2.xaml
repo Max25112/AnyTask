@@ -1,0 +1,18 @@
+﻿<Window x:Class="Transport.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Transport"
+        mc:Ignorable="d"
+        Title="Window2" Height="350" Width="400">
+    <Grid>
+        <Label Content="Водитель" HorizontalAlignment="Left" Height="31" Margin="135,26,0,0" VerticalAlignment="Top" Width="98"/>
+        <Label Content="ФИО:" HorizontalAlignment="Left" Height="27" Margin="23,73,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label Content="Водительский &#xD;&#xA;права:" HorizontalAlignment="Left" Height="42" Margin="23,105,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label Content="Срок &#xD;&#xA;истечения &#xD;&#xA;прав" HorizontalAlignment="Left" Height="59" Margin="23,166,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label Content="Мед. карта" HorizontalAlignment="Left" Height="28" Margin="23,239,0,0" VerticalAlignment="Top" Width="82"/>
+        <Label Content="Автобус" HorizontalAlignment="Left" Height="30" Margin="23,284,0,0" VerticalAlignment="Top" Width="70"/>
+
+    </Grid>
+</Window>
