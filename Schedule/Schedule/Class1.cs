@@ -20,7 +20,6 @@ namespace Schedule
         /// <summary>
         /// время занятий
         /// </summary>
-        //public List<Lesson> Lessons { get; set; }
     }
     public class Institutions
     {
@@ -36,11 +35,12 @@ namespace Schedule
         /// <summary>
         /// учреждение
         /// </summary>
-        public string Teaches { get; set; }
+        public List<Teach> Teaches { get; set; }
         /// <summary>
         /// учитель преподаватель
         /// </summary>
-        
+        public List<Lesson> Lessons { get; set; }
+
     }
     public class Teach
     {
@@ -64,7 +64,7 @@ namespace Schedule
         /// <summary>
         /// предмет дисциплина
         /// </summary
-        public List<Teach> Teaches { get; set;}
+        
         public override string ToString()
         {
             return $"Имя: {Name},  Фамилия: {Surname}, Должность: {Position}, Дисциплина: {Subject}, Категория: {Category}";
