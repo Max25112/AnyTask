@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Schedule
 {
-    public class Lessons
+    public class Lesson
     {
         public string Subject { get; set; }
         /// <summary>
@@ -20,6 +20,7 @@ namespace Schedule
         /// <summary>
         /// время занятий
         /// </summary>
+        public List<Lesson> Lessons { get; set; }
     }
     public class Institutions
     {
@@ -33,12 +34,13 @@ namespace Schedule
         /// </summary>
         public string Institution { get; set; }
         /// <summary>
-        /// учереждение
+        /// учреждение
         /// </summary>
         public string Teaches { get; set; }
         /// <summary>
         /// учитель преподаватель
         /// </summary>
+        
     }
     public class Teach
     {
@@ -61,6 +63,11 @@ namespace Schedule
         public string Subject { get; set; }
         /// <summary>
         /// предмет дисциплина
-        /// </summary>
+        /// </summary
+        public List<Teach> Teaches { get; set;}
+        public override string ToString()
+        {
+            return $"Имя: {Name},  Фамилия: {Surname}, Должность: {Position}, Дисциплина: {Subject}, Категория: {Category}";
+        }
     }
 }
