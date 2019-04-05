@@ -20,7 +20,7 @@ namespace Schedule
         /// <summary>
         /// время занятий
         /// </summary>
-        public List<Lesson> Lessons { get; set; }
+        //public List<Lesson> Lessons { get; set; }
     }
     public class Institutions
     {
