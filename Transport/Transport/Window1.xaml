@@ -8,7 +8,7 @@
         Title="Window1" Height="300" Width="400">
     <Grid>
         <Label Content="Маршрут __" HorizontalAlignment="Left" Height="34" Margin="152,10,0,0" VerticalAlignment="Top" Width="98"/>
-        <Label Content="Остановки" HorizontalAlignment="Left" Height="25" Margin="26,44,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Остановки" HorizontalAlignment="Left" Height="25" Margin="26,51,0,0" VerticalAlignment="Top" Width="79"/>
         <ListView HorizontalAlignment="Left" Height="170" Margin="26,85,0,0" VerticalAlignment="Top" Width="230">
             <ListView.View>
                 <GridView>
@@ -17,7 +17,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ComboBox HorizontalAlignment="Left" Height="25" Margin="121,44,0,0" VerticalAlignment="Top" Width="104"/>
+        <ComboBox HorizontalAlignment="Left" Height="25" Margin="152,51,0,0" VerticalAlignment="Top" Width="104"/>
 
     </Grid>
 </Window>

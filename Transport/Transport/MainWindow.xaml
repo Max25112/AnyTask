@@ -3,29 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:Transport"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
-
-        <ListView HorizontalAlignment="Left" Height="350" Margin="46,27,0,0" VerticalAlignment="Top" Width="493" SelectionChanged="ListView_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn Header="Маршрут" DisplayMemberBinding="{Binding Path=Route}" Width="70"></GridViewColumn>
-                        <GridViewColumn Header="Автобус" DisplayMemberBinding="{Binding Path=Bus}" Width="70"></GridViewColumn>
-                        <GridViewColumn Header="Остановка" DisplayMemberBinding="{Binding Path=Stay}" Width="70"></GridViewColumn>
-                        <GridViewColumn Header="Госномер" DisplayMemberBinding="{Binding Path=LicenseNumber}" Width="70"></GridViewColumn>
-                        <GridViewColumn Header="Модель" DisplayMemberBinding="{Binding Path=Model}" Width="70"></GridViewColumn>
-                        <GridViewColumn Header="Водитель" DisplayMemberBinding="{Binding Path=Driver}" Width="70"></GridViewColumn>
-                        <GridViewColumn Header="Кондуктор" DisplayMemberBinding="{Binding Path=Conductor}" Width="70"></GridViewColumn>
-                        <GridViewColumn Header="Время" DisplayMemberBinding="{Binding Path=Time}" Width="70"></GridViewColumn>
-                    </GridView.Columns>
-
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Content="Обновить" HorizontalAlignment="Left" Height="29" Margin="579,27,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click"/>
-
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Сохранить пользователей" ></MenuItem>
+                <MenuItem Header="Загрузить пользователей"  Click="MenuItem_Click">
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Exit" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit" ></MenuItem>
+            <MenuItem Header="View" ></MenuItem>
+        </Menu>
+        <DataGrid Height="148" HorizontalAlignment="Left" Margin="12,21,0,0" Name="TransportList" VerticalAlignment="Top" Width="500" />
+        <Button Content="Обновить" HorizontalAlignment="Left" Height="29" Margin="542,25,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click"/>
     </Grid>
 </Window>

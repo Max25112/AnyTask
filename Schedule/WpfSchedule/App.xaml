@@ -1,9 +1,8 @@
-﻿<Application x:Class="Transport.App"
+﻿<Application x:Class="WpfSchedule.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Transport"
-             StartupUri="Authorization.xaml"
-             ShutdownMode="OnLastWindowClose">
+             xmlns:local="clr-namespace:WpfSchedule"
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
          
     </Application.Resources>

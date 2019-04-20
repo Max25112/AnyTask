@@ -15,18 +15,20 @@ using System.Windows.Shapes;
 namespace Transport
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для Testwindow.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Testwindow : Window
     {
-        public Window1()
+        public class Phone
+        {
+            public string Title { get; set; }
+            public string Company { get; set; }
+            public int Price { get; set; }
+        }
+        public Testwindow()
         {
             InitializeComponent();
-        }
-        protected override void OnClosed(EventArgs e)
-        {
-            base.OnClosed(e);
-            App.Current.Shutdown();
+            
         }
     }
 }
