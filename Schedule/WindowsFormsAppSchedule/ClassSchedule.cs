@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Schedule
+namespace WindowsFormsAppSchedule
 {
     public class Lesson
     {
@@ -19,6 +19,10 @@ namespace Schedule
         public DateTime ClassTime { get; set; }
         /// <summary>
         /// время занятий
+        /// </summary>
+        public string HomeWork { get; set; }
+        /// <summary>
+        /// домашняя работа
         /// </summary>
     }
     public class Institutions
@@ -52,6 +56,10 @@ namespace Schedule
         /// <summary>
         /// категория
         /// </summary>
+        public string Subject { get; set; }
+        /// <summary>
+        /// предмет дисциплина
+        /// </summary
         public string Name { get; set; }
         /// <summary>
         /// имя
@@ -60,10 +68,7 @@ namespace Schedule
         /// <summary>
         /// фамилия
         /// </summary>
-        public string Subject { get; set; }
-        /// <summary>
-        /// предмет дисциплина
-        /// </summary
+       
 
         public override string ToString()
         {

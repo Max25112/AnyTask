@@ -9,6 +9,7 @@
         Title="MainWindow" Height="450" Width="800">
 
     <Grid>
+
         <Menu Height="25" VerticalAlignment="Top">
             <MenuItem Header="File">
                 <MenuItem Header="Сохранить пользователей" ></MenuItem>
@@ -17,10 +18,15 @@
                 <Separator />
                 <MenuItem Header="Exit" ></MenuItem>
             </MenuItem>
-            <MenuItem Header="Edit" ></MenuItem>
+            <MenuItem Header="Edit" Click="MenuItem_Click_1" >
+                <MenuItem Header="Exel"  Click="MenuItem_Click"></MenuItem>
+                <Separator />
+            </MenuItem>
             <MenuItem Header="View" ></MenuItem>
         </Menu>
-        <DataGrid Height="148" HorizontalAlignment="Left" Margin="12,21,0,0" Name="TransportList" VerticalAlignment="Top" Width="500" />
-        <Button Content="Обновить" HorizontalAlignment="Left" Height="29" Margin="542,25,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click"/>
+        <DataGrid Height="221" HorizontalAlignment="Left" Margin="12,64,0,0" Name="TransportList" VerticalAlignment="Top" Width="586" />
+        <Button Content="Обновить" HorizontalAlignment="Left" Height="29" Margin="662,21,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click"/>
+        <Button Content="Выход" Name="ExitAccont" HorizontalAlignment="Left" Height="25" Margin="662,364,0,0" VerticalAlignment="Top" Width="102" Click="ExitAccont_Click"/>
+        <Button Content="Exel" Name="Exel" HorizontalAlignment="Left" Height="30" Margin="665,68,0,0" VerticalAlignment="Top" Width="99" Click="Exel_Click"/>
     </Grid>
 </Window>

@@ -1,30 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.IO;
-using System.Linq;
-using System.Text;
 using Microsoft.Win32;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Text;
 namespace Transport
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
+    class User
+    {
+
+        public string UserName { get; set; }
+        public string Password { get; set; }
+
+    }
+    class PrintExel
+    {
+        public static void ExportToExcel(List<User> vUser)
+        {
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook workBook = excelApp.Workbooks.Add();
+            Excel.Worksheet workSheet = workBook.ActiveSheet;
+            workSheet.Cells[1, "A"] = "User";
+            workSheet.Cells[1, "B"] = "Password";
+            workBook.Close(true, "Users.xlsx");
+            excelApp.Quit();
+            MessageBox.Show("Файл успешно сохранён!");
+            string parser = File.ReadAllText(@"UserName.txt", Encoding.Default);
+            int parsers = Convert.ToInt32(parser);
+            int row = 1;
+            foreach (User users in vUser)
+            {
+                row++;
+                workSheet.Cells[parsers, "A"] = users.UserName;
+                workSheet.Cells[parsers, "B"] = users.Password;
+            }
+
+        }
+
+    }
     public partial class MainWindow : Window
     {
         string FilePath { get; set; }
-        string[] Itemstring;
 
         public MainWindow()
         {
@@ -35,17 +56,16 @@ namespace Transport
             public string Bus { get; set; }
             public string Stay { get; set; }
             public string LicenseNumber { get; set; }
-            public string Model { get; set; }
             public string Driver { get; set; }
             public string Conductor { get; set; }
             public int Time { get; set; }
         }
 
-        protected override void OnClosed(EventArgs e)
-        {
-            base.OnClosed(e);
-            App.Current.Shutdown();
-        }
+        //protected override void OnClosed(EventArgs e)
+        //{
+        //    base.OnClosed(e);
+        //    App.Current.Shutdown();
+        //}
         public partial class ListViewGridViewSample : Window
         {
 
@@ -63,7 +83,6 @@ namespace Transport
                 Bus = "19А",
                 Stay = "Профессорская",
                 LicenseNumber = "AAA000BBB",
-                Model = "Kia Granbird",
                 Driver = "Иванов Иван Иванович",
                 Conductor = "Иванов Иван Иванович",
                 Time = 4
@@ -90,10 +109,9 @@ namespace Transport
                     Bus = splitededStr[0],
                     Stay = splitededStr[1],
                     LicenseNumber = splitededStr[2],
-                    Model = splitededStr[3],
-                    Driver = splitededStr[4],
-                    Conductor = splitededStr[5],
-                    Time = Int32.Parse(splitededStr[6])
+                    Driver = splitededStr[3],
+                    Conductor = splitededStr[4],
+                    Time = Int32.Parse(splitededStr[5])
                 }
             );
             }
@@ -106,5 +124,26 @@ namespace Transport
             FilePath = openFileDialog.FileName;
             TransportList.ItemsSource = ListInitialization();
         }
+
+        private void ExitAccont_Click(object sender, RoutedEventArgs e)
+        {
+            File.WriteAllText("log.txt", String.Empty);
+            Authorization authorization = new Authorization();
+            authorization.Show();
+            //System.Threading.Thread.Sleep(2000); 
+            //using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"log.txt", false))
+            //{
+            //    file.WriteLine("");
+            //}
+            
+            this.Close();
+        }
+
+        private void Exel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
+
+
 }

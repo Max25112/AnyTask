@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminWindows.cs">
+    <Compile Include="AdminLessonWindows.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminWindows.Designer.cs">
-      <DependentUpon>AdminWindows.cs</DependentUpon>
+    <Compile Include="AdminLessonWindows.Designer.cs">
+      <DependentUpon>AdminLessonWindows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTeacherWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTeacherWindow.Designer.cs">
+      <DependentUpon>AdminTeacherWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="ClassSchedule.cs" />
     <Compile Include="Form1.cs">
@@ -67,8 +73,11 @@
     <Compile Include="SelectionSchool.Designer.cs">
       <DependentUpon>SelectionSchool.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminWindows.resx">
-      <DependentUpon>AdminWindows.cs</DependentUpon>
+    <EmbeddedResource Include="AdminLessonWindows.resx">
+      <DependentUpon>AdminLessonWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTeacherWindow.resx">
+      <DependentUpon>AdminTeacherWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

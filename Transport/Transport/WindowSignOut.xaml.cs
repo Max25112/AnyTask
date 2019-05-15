@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace Transport
 {
@@ -36,7 +37,7 @@ namespace Transport
                 var password = PasswordBox.Password;
                 using (StreamWriter sw = new StreamWriter(writePath, true, System.Text.Encoding.Default))
                 {
-                    sw.Write(user + " " + password + "\n");
+                    sw.Write(user + " " + GetHashSHA1(password) + "\n");
                 }
                 this.Close();
             }
@@ -45,6 +46,15 @@ namespace Transport
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        string GetHashSHA1(string input)
+        {
+            byte[] hash;
+            using (var sha1 = new System.Security.Cryptography.SHA1CryptoServiceProvider())
+                hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(input));
+            var sb = new StringBuilder();
+            foreach (byte b in hash) sb.AppendFormat("{0:x2}", b);
+            return sb.ToString();
         }
     }
 }

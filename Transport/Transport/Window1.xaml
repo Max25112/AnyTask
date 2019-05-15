@@ -18,6 +18,6 @@
             </ListView.View>
         </ListView>
         <ComboBox HorizontalAlignment="Left" Height="25" Margin="152,51,0,0" VerticalAlignment="Top" Width="104"/>
-
+        <Button Content="Выход" Name="ExitAccont" HorizontalAlignment="Left" Height="25" Margin="280,230,0,0" VerticalAlignment="Top" Width="102" Click="ExitAccont_Click"/>
     </Grid>
 </Window>
