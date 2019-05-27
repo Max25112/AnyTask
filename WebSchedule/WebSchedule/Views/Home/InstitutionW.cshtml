@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+    <meta name="viewport" content="width-device-width" />
+    <title>Tabel</title>
+</head>
+<body>
+    <div>
+        <h3>Форма</h3>
+        <form method="post" action="">
+            <table>
+                <tr>
+                    <td>Название</td>
+                    <td><input type="text" name="Title" /></td>
+                </tr>
+                <tr>
+                    <td>Регион</td>
+                    <td><input type="text" name="Region" /></td>
+                </tr>
+                <tr>
+                    <td>Город</td>
+                    <td><input type="text" name="City" /></td>
+                </tr>
+                <tr>
+                    <td><button name="button">Дабавить</button></td>
+                </tr>
+            </table>
+        </form>
+
+        <h3>Table</h3>
+        <br />
+        <div style="overflow-x:auto;">
+            <table border="0" class="table">
+                <thead>
+                    <tr class="tr">
+                        <td class="td">Название</td>
+                        <td class="td">Регион</td>
+                        <td class="td">Город</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        if (ViewBag.Institutiones != null)
+                        {
+                            foreach (var institution in ViewBag.Institutiones)
+                            {
+                                <tr class="tr">
+                                    <td class="td">@institution.Title</td>
+                                    <td class="td">@institution.Region</td>
+                                    <td class="td">@institution.City</td>
+                                </tr>
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

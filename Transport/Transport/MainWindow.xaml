@@ -12,7 +12,7 @@
 
         <Menu Height="25" VerticalAlignment="Top">
             <MenuItem Header="File">
-                <MenuItem Header="Сохранить пользователей" ></MenuItem>
+                <MenuItem Header="Сохранить пользователей" Click="MenuItem_Click_1" ></MenuItem>
                 <MenuItem Header="Загрузить пользователей"  Click="MenuItem_Click">
                 </MenuItem>
                 <Separator />
@@ -28,5 +28,6 @@
         <Button Content="Обновить" HorizontalAlignment="Left" Height="29" Margin="662,21,0,0" VerticalAlignment="Top" Width="102" Click="Button_Click"/>
         <Button Content="Выход" Name="ExitAccont" HorizontalAlignment="Left" Height="25" Margin="662,364,0,0" VerticalAlignment="Top" Width="102" Click="ExitAccont_Click"/>
         <Button Content="Exel" Name="Exel" HorizontalAlignment="Left" Height="30" Margin="665,68,0,0" VerticalAlignment="Top" Width="99" Click="Exel_Click"/>
+        <Button Content="Word" x:Name="Word" HorizontalAlignment="Left" Height="30" Margin="665,126,0,0" VerticalAlignment="Top" Width="99" Click="Word_Click"/>
     </Grid>
 </Window>
