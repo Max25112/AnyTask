@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCoreSchedule2", "WebApplication2\WebCoreSchedule2.csproj", "{42694FF5-6DFE-4969-BE48-6E4025639F8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42694FF5-6DFE-4969-BE48-6E4025639F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42694FF5-6DFE-4969-BE48-6E4025639F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42694FF5-6DFE-4969-BE48-6E4025639F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42694FF5-6DFE-4969-BE48-6E4025639F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7549BE4-3B2D-4E98-A841-284583B752B1}
+	EndGlobalSection
+EndGlobal
