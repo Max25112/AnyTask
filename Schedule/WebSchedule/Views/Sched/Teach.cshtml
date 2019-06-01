@@ -1,0 +1,96 @@
+﻿@model System.Collections.Generic.List<WebSchedule.Models.DataAccessPostgreSqlProvider.DbTeach>
+@{
+    ViewBag.Title = "Учителя";
+    Layout = "_Layout";
+}
+    <div>
+        <h3>Форма</h3>
+        <form method="post" action="">
+            <table>
+                <tr>
+                    <td>Должность</td>
+                    <td>
+                        <select name="Position">
+                            <option>Учитель</option>
+                            <option>Завуч</option>
+                            <option>Директор</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Категория</td>
+                    <td>
+                        <select name="Category">
+                            <option>0</option>
+                            <option>4</option>
+                            <option>3</option>
+                            <option>2</option>
+                            <option>1</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Дисциплина</td>
+                    <td>
+                        <select name="Subject">
+                            <option>Математика</option>
+                            <option>Русский язык</option>
+                            <option>Литература</option>
+                            <option>История</option>
+                            <option>Обществозание</option>
+                            <option>Литература</option>
+                            <option>История</option>
+                            <option>Обществозание</option>
+                            <option>Физика</option>
+                            <option>Химия</option>
+                            <option>Биология</option>
+                            <option>Информатика</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Имя</td>
+                    <td><input type="text" name="Name" /></td>
+                </tr>
+                <tr>
+                    <td>Фамииля</td>
+                    <td><input type="text" name="Surname" /></td>
+                </tr>
+                <tr>
+                    <td><button name="buttonTeach">Дабавить</button></td>
+                </tr>
+            </table>
+        </form>
+
+        <h3>Table</h3>
+        <br />
+        <div style="overflow-x:auto;">
+            <table border="0" class="table">
+                <thead>
+                    <tr class="tr">
+                        <td class="td">ID</td>
+                        <td class="td">Должность</td>
+                        <td class="td">Категория</td>
+                        <td class="td">Дисциплина</td>
+                        <td class="td">Имя</td>
+                        <td class="td">Фамилия</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (var teach in Model)
+                        {
+                            <tr class="tr">
+                                <td class="td">@teach.ID</td>
+                                <td class="td">@teach.Position</td>
+                                <td class="td">@teach.Category</td>
+                                <td class="td">@teach.Subject</td>
+                                <td class="td">@teach.Name</td>
+                                <td class="td">@teach.Surname</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
