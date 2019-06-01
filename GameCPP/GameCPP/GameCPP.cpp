@@ -187,6 +187,7 @@ int battle(const Ghost& _enemy, const Player& _Hero)
 int main()
 {
 	srand(time(0));
+	bonusDamage = 0;
 	int exit;
 	int x;
 	setlocale(LC_ALL, "Russian");
