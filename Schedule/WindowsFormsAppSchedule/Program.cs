@@ -16,7 +16,7 @@ namespace WindowsFormsAppSchedule
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminTeacherWindow());
+            Application.Run(new Form2());
         }
     }
 }

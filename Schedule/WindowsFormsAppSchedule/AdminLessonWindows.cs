@@ -53,9 +53,8 @@ namespace WindowsFormsAppSchedule
         public LessonWin(string subject, string classes, DateTime classTime, string homeWork)
         {
             Subject = subject;
-            Classes = classes;
-            ClassTime = classTime;
-            HomeWork = homeWork;
+             Audience = classes;
+
         }
     }
 }

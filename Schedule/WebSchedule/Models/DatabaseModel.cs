@@ -25,8 +25,7 @@ namespace WebSchedule.Models
             {
             }
 
-            public DbSet<DbInstitution> Institutions { get; set; }
-            public DbSet<DbLesson> Lessons { get; set; }
+            public DbSet<DbLessons> Lessons { get; set; }
             public DbSet<DbTeach> Teaches { get; set; }
             public static string ConnectionString { get; set; }
 
@@ -37,76 +36,57 @@ namespace WebSchedule.Models
                 base.OnConfiguring(optionsBuilder);
             }
         }
-        public class DbInstitution
-        {
-            [Key]
-            public int InstID { get; set; }
-            public string Title { get; set; }
-            /// <summary>
-            /// название
-            /// </summary>
-            public string Region { get; set; }
-            /// <summary>
-            /// регион
-            /// </summary>
-            public string City { get; set; }
-            /// <summary>
-            /// город
-            /// </summary>
-            public virtual Collection<DbLesson> Lessons { get; set; }
-            /// <summary>
-            /// Работники
-            /// </summary>
-            public virtual Collection<DbTeach> Teaches { get; set; }
-        }
-        public class DbLesson
-        {
-            [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-            public int LesID { get; set; }
-            [ForeignKey("TeachId")]
-            public virtual DbTeach Teacher { get; set; }
-            public string Discplina { get; set; }
-            /// <summary>
-            /// предмет дисциплина
-            /// </summary>
-            public string Class { get; set; }
-            /// <summary>
-            /// Класс аудиория
-            /// </summary>
-            public string HomeWork { get; set; }
-            /// <summary>
-            /// домашняя работа
-            /// </summary>
-            public virtual DbInstitution Institution { get; set; }
-        }
-        public class DbTeach
+        public class DbLessons
         {
             [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
             public int ID { get; set; }
-            /// <summary>
-            /// id
-            /// </summary>
-            public string Position { get; set; }
-            /// <summary>
-            /// должность
-            /// </summary>
-            public int Category { get; set; }
-            /// <summary>
-            /// категория
-            /// </summary>
+            public string Day { get; set; }
+            public string Class { get; set; }
+            public virtual Collection<DbLesson> LessonDay { get; set; }
+
+        }
+        public class DbLesson
+        {
+
+            public int ID { get; set; }
+            public virtual DbLessons Lessons { get; set; }
             public string Subject { get; set; }
             /// <summary>
             /// предмет дисциплина
+            /// </summary>
+            public string Audience { get; set; }
+            /// <summary>
+            /// Класс аудиория
+            /// </summary>
+        }
+        public class DbTeach
+        {
+            /// <summary>
+            /// id
+            /// </summary>
+            [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+            public int ID { get; set; }
+            /// <summary>
+            /// должность
+            /// </summary>
+            public string Position { get; set; }
+            /// <summary>
+            /// категория
+            /// </summary>
+            public int Category { get; set; }
+            /// <summary>
+            /// предмет дисциплина
             /// </summary
-            public string Name { get; set; }
+            public string Subject { get; set; }
             /// <summary>
             /// имя
             /// </summary>
-            public string Surname { get; set; }
+            public string Name { get; set; }
             /// <summary>
             /// фамилия
             /// </summary>
-            public virtual DbInstitution Institutions { get; set; }
+            public string Surname { get; set; }
+
         }
-    }  
+    }
 }

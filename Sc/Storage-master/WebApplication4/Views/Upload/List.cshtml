@@ -1,60 +1,30 @@
-﻿@model System.Collections.Generic.List<WebApplication.Models.DataAccessPostgreSqlProvider.DbStorage>
+﻿@model System.Collections.Generic.List<WebApplication.Models.DataAccessPostgreSqlProvider.DbLessons>
 @{
-    ViewBag.Title = "Склады";
+    ViewBag.Title = "Расписание";
     Layout = "_Layout";
 }
 <h2>@ViewBag.Title</h2>
-@foreach (var storage in Model)
+@foreach (var lessons in Model)
 {
 <div>
     Название:
-    @storage.Name
+    @lessons.Day
     Адрес:
-    @storage.Address
-    Вместимость:
-    @storage.Capacity
-    Тип:
-    @storage.StorageType
-    <a href="Print?id=@storage.Id">Напечатать в Excel</a>
+    @lessons.Class
     <table class="table table-bordered table-responsive table-hover">
         <thead>
             <tr>
-                <td>Название</td>
-                <td>Цена</td>
-                <td>Количество</td>
-                <td>Производитель</td>
+                <td>Предмет</td>
+                <td>Аудитория</td>
             </tr>
         </thead>
-        @if (storage.Items != null)
+        @if (lessons.LessonDay != null)
         {
-            foreach (var item in storage.Items)
+            foreach (var lesson in lessons.LessonDay)
             {
                 <tr>
-                    <td>@item.Name</td>
-                    <td>@item.Price</td>
-                    <td>@item.Units</td>
-                    <td>@item.Manufacturer</td>
-                </tr>
-            }
-        }
-    </table>
-
-    <table class="table table-bordered table-responsive table-hover">
-        <thead>
-            <tr>
-                <td>Имя</td>
-                <td>Должность</td>
-                <td>Стаж</td>
-            </tr>
-        </thead>
-        @if (storage.Workers != null)
-        {
-            foreach (var worker in storage.Workers)
-            {
-                <tr>
-                    <td>@worker.Name</td>
-                    <td>@worker.Position</td>
-                    <td>@worker.Experience</td>
+                    <td>@lesson.Subject</td>
+                    <td>@lesson.Audience</td>
                 </tr>
             }
         }

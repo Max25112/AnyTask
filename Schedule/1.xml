@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Lessons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Day>Понедельнику</Day>
+  <Class>1</Class>
+  <LessonDay>
+    <Lesson>
+      <Subject>Математика</Subject>
+      <Audience>2</Audience>
+    </Lesson>
+    <Lesson>
+      <Subject>Русский язык</Subject>
+      <Audience>1</Audience>
+    </Lesson>
+  </LessonDay>
+</Lessons>

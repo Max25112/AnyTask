@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Storage;
+using WindowsFormsAppSchedule;
 using WebApplication4.Models;
 
 namespace WebApplication.Controllers
@@ -13,10 +13,9 @@ namespace WebApplication.Controllers
     {
         public IActionResult Index()
         {
-            new StorageModel();
+            new Lesson();
             return View();
         }
-
         public IActionResult Privacy()
         {
             return View();

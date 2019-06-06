@@ -6,53 +6,43 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsAppSchedule
 {
+    public class Lessons
+    {
+       
+        /// <summary>
+        /// День
+        /// </summary>
+        public string Day { get; set; }
+        /// <summary>
+        /// Класс
+        /// </summary>
+        public string Class { get; set; }
+        public List<Lesson>  LessonDay{get; set;}
+
+    }
     public class Lesson
     {
         public string Subject { get; set; }
         /// <summary>
         /// предмет дисциплина
         /// </summary>
-        public string Classes { get; set; }
+        public string Audience { get; set; }
         /// <summary>
         /// Класс аудиория
         /// </summary>
-        public DateTime ClassTime { get; set; }
-        /// <summary>
-        /// время занятий
-        /// </summary>
-        public string HomeWork { get; set; }
-        /// <summary>
-        /// домашняя работа
-        /// </summary>
-    }
-    public class Institutions
-    {
-        public string Region { get; set; }
-        /// <summary>
-        /// регион
-        /// </summary>
-        public string City { get; set; }
-        /// <summary>
-        /// город
-        /// </summary>
-        public string Institution { get; set; }
-        /// <summary>
-        /// учреждение
-        /// </summary>
-        public List<Teach> Teaches { get; set; }
-        /// <summary>
-        /// учитель преподаватель
-        /// </summary>
-        public List<Lesson> Lessons { get; set; }
+        public override string ToString()
+        {
+            return $"Дисциплина: {Subject}, Аудитория: {Audience}";
+        }
+}
 
-    }
     public class Teach
     {
         public string Position { get; set; }
         /// <summary>
         /// должность
         /// </summary>
-        public string Category { get; set; }
+        public int Category { get; set; }
         /// <summary>
         /// категория
         /// </summary>

@@ -103,11 +103,11 @@
             // 
             this.CategoryBox.FormattingEnabled = true;
             this.CategoryBox.Items.AddRange(new object[] {
-            "I",
-            "II",
-            "III",
-            "IV",
-            "-"});
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"});
             this.CategoryBox.Location = new System.Drawing.Point(164, 64);
             this.CategoryBox.Name = "CategoryBox";
             this.CategoryBox.Size = new System.Drawing.Size(57, 21);

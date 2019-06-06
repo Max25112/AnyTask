@@ -19,7 +19,6 @@ namespace WebSchedule.Controllers
             new Lesson();
             return View();
         }
-
         public IActionResult Privacy()
         {
             return View();

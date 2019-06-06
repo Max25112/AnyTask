@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Lessons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Day>Понедельник</Day>
+  <Lessonday>
+    <Lesson>
+      <Subject>Математика</Subject>
+      <Class>1</Class>
+    </Lesson>
+    <Lesson>
+      <Subject>Русский язык</Subject>
+      <Classes>2</Classes>
+    </Lesson>
+    <Lesson>
+      <Subject>Обществознание</Subject>
+      <Classes>1</Classes>
+    </Lesson>
+    <Lesson>
+      <Subject>Литература</Subject>
+      <Classes>1</Classes>
+    </Lesson>
+  </Lessonday>
+  <Day>Вторник</Day>
+  <Lessonday>
+    <Lesson>
+      <Subject>Математика</Subject>
+      <Classes>1</Classes>
+    </Lesson>
+    <Lesson>
+      <Subject>Русский язык</Subject>
+      <Classes>2</Classes>
+    </Lesson>
+    <Lesson>
+      <Subject>Обществознание</Subject>
+      <Classes>1</Classes>
+    </Lesson>
+    <Lesson>
+      <Subject>Литература</Subject>
+      <Classes>1</Classes>
+    </Lesson>
+  </Lessonday>
+</Lessons>

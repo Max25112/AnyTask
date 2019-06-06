@@ -30,24 +30,53 @@ namespace WebSchedule.Controllers
         [HttpPost]
         public ActionResult DoUpload(IFormFile file)
         {
-            return View();
+            using (var stream = file.OpenReadStream())
+            {
+                var xs = new XmlSerializer(typeof(Lessons));
+                var lesssons = (Lessons)xs.Deserialize(stream);
+
+
+                using (var db = new ScheduleDbContext())
+                {
+                    var dbs = new DbLessons()
+                    {
+                        Day = lesssons.Day,
+                        Class = lesssons.Class,
+                    };
+                    dbs.LessonDay = new Collection<DbLesson>();
+                    foreach (var lesson in lesssons.LessonDay)
+                    {
+                        dbs.LessonDay.Add(new DbLesson()
+                        {
+                            Subject = lesson.Subject,
+                            Audience = lesson.Audience
+                        });
+                    }
+                    db.Lessons.Add(dbs);
+                    db.SaveChanges();
+                }
+
+                return View(lesssons);
+            }
         }
 
 
 
         public ActionResult List()
         {
-            List<DbInstitution> list;
+            List<DbLessons> list;
             using (var db = new ScheduleDbContext())
             {
-                list = db.Institutions.Include(s => s.Lessons).ToList();
-                list = db.Institutions.Include(s => s.Teaches).ToList();
+                list = db.Lessons.Include(s => s.LessonDay).ToList();
             }
 
             return View(list);
         }
 
 
-       
+        public ActionResult Print(int id)
+        {
+            return View();
+        }
     }
 }

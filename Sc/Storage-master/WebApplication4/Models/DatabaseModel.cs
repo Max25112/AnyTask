@@ -12,117 +12,80 @@ namespace WebApplication.Models
     namespace DataAccessPostgreSqlProvider
     {
         // >dotnet ef migration add testMigration in AspNet5MultipleProject
-        public class StorageDbContext : DbContext
+        public class ScheduleDbContext : DbContext
         {
-            public StorageDbContext()
+            public ScheduleDbContext()
             {
 
                 Database.EnsureCreated();
             }
 
-            public StorageDbContext(DbContextOptions<StorageDbContext> options) : base(options)
+            public ScheduleDbContext(DbContextOptions<ScheduleDbContext> options) : base(options)
             {
             }
 
-            public DbSet<DbStorage> StorageFacilities { get; set; }
-            //public DbSet<DbFlight> Flights { get; set; }
+            public DbSet<DbLessons> Lessons { get; set; }
+            public DbSet<DbTeach> Teaches { get; set; }
             public static string ConnectionString { get; set; }
 
             protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
-                optionsBuilder.UseNpgsql(StorageDbContext.ConnectionString);
+                optionsBuilder.UseNpgsql(ScheduleDbContext.ConnectionString);
 
                 base.OnConfiguring(optionsBuilder);
             }
         }
-
-        public class DbStorage
+        public class DbLessons
         {
             [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-            public int Id { get; set; }
-            /// <summary>
-            /// Название
-            /// </summary>
-            public string Name { get; set; }
-            /// <summary>
-            /// Вместимость
-            /// </summary>
-            public int Capacity { get; set; }
-            /// <summary>
-            /// Адрес
-            /// </summary>
-            public string Address { get; set; }
-            /// <summary>
-            /// Тип склада
-            /// </summary>
-            public Storage.StorageType StorageType { get; set; }
-            /// <summary>
-            /// Складской журнал
-            /// </summary>
-            public virtual Collection<DbItem> Items { get; set; }
-            /// <summary>
-            /// Работники
-            /// </summary>
-            public virtual Collection<DbWorkers> Workers { get; set; }
+            public int ID { get; set; }     
+            public string Day { get; set; }
+            public string Class { get; set; }
+            public virtual Collection<DbLesson> LessonDay { get; set; }
+
         }
-
-        public class DbItem
+        public class DbLesson
         {
-            [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-            public int Id { get; set; }
-
-            public int StorageId { get; set; }
-            [ForeignKey("StorageId")]
-
-            public virtual DbStorage Storage { get; set; }
+            
+            public int ID { get; set; }
+            public virtual DbLessons Lessons { get; set; }
+            public string Subject { get; set; }
             /// <summary>
-            /// Название
+            /// предмет дисциплина
             /// </summary>
-            public string Name { get; set; }
+            public string Audience { get; set; }
             /// <summary>
-            /// Цена
+            /// Класс аудиория
             /// </summary>
-            public int Price { get; set; }
-            /// <summary>
-            /// Кол-во
-            /// </summary>
-            public int Units { get; set; }
-            /// <summary>
-            /// Производитель
-            /// </summary>
-            public string Manufacturer { get; set; }
-
-            public override string ToString()
-            {
-                return $"Название: {Name}, Цена: {Price}, Количество: {Units}, Производитель: {Manufacturer}";
-            }
         }
-
-        public class DbWorkers
+        public class DbTeach
         {
-            [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-            public int Id { get; set; }
-
-            public int StorageId { get; set; }
-            [ForeignKey("StorageId")]
-            public virtual DbStorage Storage { get; set; }
             /// <summary>
-            /// Имя
+            /// id
             /// </summary>
-            public string Name { get; set; }
+            [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+            public int ID { get; set; }
             /// <summary>
-            /// Должность
+            /// должность
             /// </summary>
             public string Position { get; set; }
-            /// <summary>
-            /// Стаж
+             /// <summary>
+            /// категория
             /// </summary>
-            public int Experience { get; set; }
-
-            public override string ToString()
-            {
-                return $"Имя: {Name}, Должность: {Position}, Стаж: {Experience}";
-            }
+            public int Category { get; set; }
+           /// <summary>
+            /// предмет дисциплина
+            /// </summary
+            public string Subject { get; set; }
+             /// <summary>
+            /// имя
+            /// </summary>
+            public string Name { get; set; }
+           /// <summary>
+            /// фамилия
+            /// </summary>
+            public string Surname { get; set; }
+            
         }
     }
 }

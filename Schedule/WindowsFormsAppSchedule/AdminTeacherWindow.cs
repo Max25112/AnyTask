@@ -16,7 +16,7 @@ namespace WindowsFormsAppSchedule
 {
     public partial class AdminTeacherWindow : Form
     {
-        public List<TeacherWin> listTeach = new List<TeacherWin>();
+       // public List<TeacherWin> listTeach = new List<TeacherWin>();
         public string spath = @"D:\AnyTask\Schedule\WindowsFormsAppSchedule\bin\Debug\teach.xml";
         string fileContent = string.Empty;
         string filePath = string.Empty;
@@ -81,7 +81,7 @@ namespace WindowsFormsAppSchedule
         {
             InitializeComponent();
         }
-        XmlSerializer formatter = new XmlSerializer(typeof(TeacherWin));
+       // XmlSerializer formatter = new XmlSerializer(typeof(TeacherWin));
         private static void Xml()
         {
             var doc = new XmlDocument();
@@ -111,7 +111,7 @@ namespace WindowsFormsAppSchedule
         {
             //CreateXML();
             OpenDial();
-            TeacherWin teach = new TeacherWin(PositionBox.Text, CategoryBox.Text, SubjectBox.Text, NameBox.Text, SurnameBox.Text);
+            //TeacherWin teach = new TeacherWin(PositionBox.Text, Convert.ToInt64(CategoryBox.Text), SubjectBox.Text, NameBox.Text, SurnameBox.Text);
 
             XDocument doc = XDocument.Load(filePath);
 
@@ -138,21 +138,26 @@ namespace WindowsFormsAppSchedule
             doc.Save(filePath);
         }
     }
-    [Serializable]
-    public class TeacherWin : Teach
-    {
+    //[Serializable]
+    //public class TeacherWin : Teach
+    //{
 
-        // стандартный конструктор без параметров
-        public TeacherWin()
-        { }
+    //    // стандартный конструктор без параметров
+    //    public TeacherWin()
+    //    { }
 
-        public TeacherWin(string position, string category, string subject, string name, string surname)
-        {
-            Position = position;
-            Category = category;
-            Subject = subject;
-            Name = name;
-            Surname = surname;
-        }
-    }
+    //    public TeacherWin(string position, int category, string subject, string name, string surname)
+    //    {
+    //        Position = position;
+    //        Category = category;
+    //        Subject = subject;
+    //        Name = name;
+    //        Surname = surname;
+    //    }
+
+    //    public static implicit operator TeacherWin(TeacherWin v)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+    //}
 }

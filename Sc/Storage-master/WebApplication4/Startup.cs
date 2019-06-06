@@ -38,9 +38,9 @@ namespace WebApplication4
 
             var sqlConnectionString = Configuration.GetConnectionString("StorageDbProvider");
 
-            StorageDbContext.ConnectionString = sqlConnectionString;
+            ScheduleDbContext.ConnectionString = sqlConnectionString;
 
-            services.AddDbContext<StorageDbContext>(options =>
+            services.AddDbContext<ScheduleDbContext>(options =>
                 options.UseNpgsql(
                     sqlConnectionString
                 )
