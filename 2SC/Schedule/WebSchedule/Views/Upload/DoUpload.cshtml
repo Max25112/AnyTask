@@ -1,0 +1,28 @@
+﻿@model WindowsFormsAppSchedule.Lessons
+
+@{
+    ViewBag.Title = "Lesson ";
+    Layout = "_Layout";
+}
+
+<h2>Класс @Model.Class</h2>
+@Model.Day
+
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <td>Предмет</td>
+            <td>Аудитория</td>
+        </tr>
+    </thead>
+    @if (Model.LessonDay != null)
+    {
+        foreach (var lesson in Model.LessonDay)
+        {
+    <tr>
+        <td>@lesson.Subject</td>
+        <td>@lesson.Audience</td>
+    </tr>
+        }
+    }
+</table>

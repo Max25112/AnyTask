@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppSchedule", "WindowsFormsAppSchedule\WindowsFormsAppSchedule.csproj", "{6C14F45B-14C5-4976-A611-034EC242ADC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSchedule", "WebSchedule\WebSchedule.csproj", "{9BFE8D23-9234-4D1E-89D5-41C200C87461}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C14F45B-14C5-4976-A611-034EC242ADC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C14F45B-14C5-4976-A611-034EC242ADC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C14F45B-14C5-4976-A611-034EC242ADC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C14F45B-14C5-4976-A611-034EC242ADC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BFE8D23-9234-4D1E-89D5-41C200C87461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BFE8D23-9234-4D1E-89D5-41C200C87461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BFE8D23-9234-4D1E-89D5-41C200C87461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BFE8D23-9234-4D1E-89D5-41C200C87461}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7B72758-C80C-49AD-9528-05357E045645}
+	EndGlobalSection
+EndGlobal

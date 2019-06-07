@@ -1,0 +1,35 @@
+﻿@model System.Collections.Generic.List<WebSchedule.Models.DataAccessPostgreSqlProvider.DbLessons>
+@{
+    ViewBag.Title = "Расписание";
+    Layout = "_Layout";
+}
+<h2>@ViewBag.Title</h2>
+@foreach (var lessons in Model)
+{
+    <div>
+        День:
+        @lessons.Day
+        Класс:
+        @lessons.Class
+        <table class="table table-bordered table-responsive table-hover">
+            <thead>
+                <tr>
+                    <td>Предмет</td>
+                    <td>Аудитория</td>
+                </tr>
+            </thead>
+            @if (lessons.LessonDay != null)
+            {
+                foreach (var lesson in lessons.LessonDay)
+                {
+                    <tr>
+                        <td>@lesson.Subject</td>
+                        <td>@lesson.Audience</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+}
+
+
